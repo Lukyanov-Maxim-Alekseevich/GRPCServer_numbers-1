@@ -1,0 +1,25 @@
+syntax="proto3";
+package api;
+option go_package="pkg/api";
+
+service Number{
+    rpc YesNumber (YesRequest) returns (YesResponse);
+    rpc NoNumber (NoRequest) returns (NoResponse);
+}
+
+
+message YesRequest{
+    int64 find_number=1;
+}
+message YesResponse{
+    int64 answer_find_number=1;
+}
+
+message NoRequest{
+    int64 no_find_number=1;
+}
+message NoResponse{
+    int64 answer_no_find_number=1;
+}
+
+
